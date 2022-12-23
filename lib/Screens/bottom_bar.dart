@@ -1,3 +1,4 @@
+import 'package:flightbookingapp/Screens/home_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,7 +17,7 @@ class _BottomBarState extends State<BottomBar> {
   int _selectIndex = 0;
 
   static final List<Widget>_widgetOptions = <Widget>[
-    const Text("Home"),
+    const HomePage(),
     const Text("Search"),
     const Text("Ticket"),
     const Text("Profile"),
@@ -32,16 +33,6 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child:  Text(
-            "Flight Booking" ,
-            style: TextStyle(
-              fontSize: 18.0,
-            ),
-          ),
-        ),
-      ),
       body: Center(
         child:  _widgetOptions[_selectIndex],
       ),
