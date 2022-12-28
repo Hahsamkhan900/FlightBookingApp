@@ -5,6 +5,8 @@ import 'package:gap/gap.dart';
 
 class HotelScreen extends StatelessWidget {
 
+
+
   final Map<String, dynamic> hotel;
   const HotelScreen({Key? key, required this.hotel}) : super(key: key);
 
@@ -13,18 +15,19 @@ class HotelScreen extends StatelessWidget {
 
     final size = AppLayout.getSize(context);
     return Container(
+
       width: size.width*0.6,
-      height: 350,
+      height: AppLayout.getHeigh(350),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 17),
-      margin: const EdgeInsets.only(right: 17, top: 5),
+      margin: const EdgeInsets.only(right: 17, top: 5, bottom: 10),
       decoration: BoxDecoration(
         color: Styles.primaryColor,
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(AppLayout.getHeigh(21)),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.shade200,
-            blurRadius: 20,
-            spreadRadius: 10
+            blurRadius: AppLayout.getHeigh(20),
+            spreadRadius: AppLayout.getHeigh(10)
           )
         ]
       ),
@@ -32,9 +35,9 @@ class HotelScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 180,
+            height: AppLayout.getHeigh(180),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(AppLayout.getHeigh(21)),
               color: Styles.primaryColor,
               image: DecorationImage(
                 fit: BoxFit.cover,

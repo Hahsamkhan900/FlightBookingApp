@@ -1,7 +1,9 @@
 import 'package:flightbookingapp/Screens/hotel_screen.dart';
 import 'package:flightbookingapp/Screens/ticket_view.dart';
 import 'package:flightbookingapp/utils/app_info_list.dart';
+import 'package:flightbookingapp/utils/app_layout.dart';
 import 'package:flightbookingapp/utils/app_styles.dart';
+import 'package:flightbookingapp/utils/double_text_widget.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,10 +24,10 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(AppLayout.getHeigh(20)),
             child: Column(
               children: [
-                const Gap(50),
+                Gap(AppLayout.getHeigh(50)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -37,7 +39,7 @@ class HomePage extends StatelessWidget {
                           style: Styles.headlineTextStyle3,
 
                         ),
-                        const Gap(5),
+                        Gap(AppLayout.getHeigh(5)),
                         Text(
                             "Book Tickets",
                           style: Styles.headlineTextStyle1,
@@ -46,7 +48,7 @@ class HomePage extends StatelessWidget {
                     ),
                     Container(
                       width: 50,
-                      height: 50,
+                      height: AppLayout.getHeigh(50),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: const DecorationImage(
@@ -57,7 +59,7 @@ class HomePage extends StatelessWidget {
                     )
                   ],
                 ),
-                const Gap(25),
+                Gap(AppLayout.getHeigh(25)),
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -74,32 +76,15 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Gap(25),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                        "Upcoming Flight",
-                      style: Styles.headlineTextStyle1,
-                    ),
-                    InkWell(
-                      onTap: (){
-                        print("You are tapped");
-                      },
-                      child: Text(
-                        "View all",
-                        style: Styles.textStyle.copyWith(color: Styles.primaryColor),
-                      ))
-                  ],
-                ),
-
+                Gap(AppLayout.getHeigh(25)),
+                const AppDoubleTextWidget(bigText: "Upcoming Flights", smallText: "View all"),
 
 
               ],
 
             ),
           ),
-          const Gap(15),
+          Gap(AppLayout.getHeigh(15)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding:const EdgeInsets.only(left: 20),
@@ -107,31 +92,15 @@ class HomePage extends StatelessWidget {
               children: TicketList.map((ticketList) => TicketView(ticketList: ticketList)).toList()
             ),
           ),
-          const Gap(15),
+          Gap(AppLayout.getHeigh(15)),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Hotels",
-                  style: Styles.headlineTextStyle1,
-                ),
-                InkWell(
-                    onTap: (){
-                      print("You are tapped");
-                    },
-                    child: Text(
-                      "View all",
-                      style: Styles.textStyle.copyWith(color: Styles.primaryColor),
-                    ))
-              ],
-            ),
+            padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(20)),
+            child: const AppDoubleTextWidget(bigText: "Hotels", smallText: "View all"),
           ),
-          const Gap(15),
+          Gap(AppLayout.getHeigh(15)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding:const EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: AppLayout.getWidth(15)),
             child: Row(
               children: HotelList.map((singleHotel) => HotelScreen(hotel: singleHotel)).toList()
             ),

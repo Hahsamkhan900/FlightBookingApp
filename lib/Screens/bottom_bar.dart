@@ -1,4 +1,6 @@
 import 'package:flightbookingapp/Screens/home_screen.dart';
+import 'package:flightbookingapp/Screens/search_screen.dart';
+import 'package:flightbookingapp/Screens/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -20,8 +22,8 @@ class _BottomBarState extends State<BottomBar> {
   //Initialize the List which we have to Call on the Bottom Bar Tap
   static final List<Widget>_widgetOptions = <Widget>[
     const HomePage(),
-    const Text("Search"),
-    const Text("Ticket"),
+    const SearchScreen(),
+    const TicketScreen(),
     const Text("Profile"),
   ];
 
