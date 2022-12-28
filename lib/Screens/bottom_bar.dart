@@ -1,4 +1,5 @@
 import 'package:flightbookingapp/Screens/home_screen.dart';
+import 'package:flightbookingapp/Screens/profile_screen.dart';
 import 'package:flightbookingapp/Screens/search_screen.dart';
 import 'package:flightbookingapp/Screens/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -24,7 +25,7 @@ class _BottomBarState extends State<BottomBar> {
     const HomePage(),
     const SearchScreen(),
     const TicketScreen(),
-    const Text("Profile"),
+    const ProfileScreen(),
   ];
 
 
